@@ -35,5 +35,10 @@
         android:name="com.yara.juststudioapp.ui.contacts.ContactsFragment"
         android:label="@string/menu_contacts"
         tools:layout="@layout/fragment_contacts" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.yara.juststudioapp.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

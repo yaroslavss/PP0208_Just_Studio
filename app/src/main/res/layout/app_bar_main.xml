@@ -9,6 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:theme="@style/Theme.JustStudioApp.AppBarOverlay">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -16,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.JustStudioApp.PopupOverlay" />
+            app:popupTheme="@style/Theme.JustStudioApp.PopupOverlay"
+            app:menu="@menu/menu_main" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
