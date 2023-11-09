@@ -7,10 +7,15 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- navigation drawer -->
     <string name="menu_home">Главная</string>
     <string name="menu_about">О студии</string>
     <string name="menu_services">Услуги и цены</string>
     <string name="menu_schedule">Расписание</string>
     <string name="menu_feedback">Отзывы</string>
     <string name="menu_contacts">Контакты</string>
+    <!-- top app bar -->
+    <string name="menu_notifications">Уведомления</string>
+    <!-- bottom navigation -->
+    <string name="menu_profile">Профиль</string>
 </resources>
