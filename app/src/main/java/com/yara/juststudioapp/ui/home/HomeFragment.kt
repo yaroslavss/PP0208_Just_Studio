@@ -28,10 +28,16 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val tvAddress: TextView = binding.tvAddress
+        homeViewModel.text_address.observe(viewLifecycleOwner) {
+            tvAddress.text = it
         }
+
+        val tvPhone: TextView = binding.tvPhone
+        homeViewModel.text_phone.observe(viewLifecycleOwner) {
+            tvPhone.text = it
+        }
+
         return root
     }
 
