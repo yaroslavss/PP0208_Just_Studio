@@ -1,5 +1,6 @@
 package com.yara.juststudioapp.ui.services
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,10 +27,15 @@ class MembershipListRecyclerAdapter(var memberships: List<Membership>) :
         return memberships.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MembershipViewHolder, position: Int) {
         val item = memberships[position]
         holder.itemView.apply {
-            binding.tvMembershipText.text = item.item_1
+            binding.tvMembershipTitle.text = item.title
+            binding.tvMembershipItem1.text = item.item_1
+            binding.tvMembershipItem2.text = item.item_2
+            binding.tvMembershipItem3.text = item.item_3
+            binding.tvMembershipPrice.text = item.price.toString() + " Р"
         }
     }
 }

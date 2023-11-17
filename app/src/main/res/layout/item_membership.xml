@@ -1,22 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_membership"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvMembershipText"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Это текст абонемента" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="@dimen/cardview_elevation"
+        app:cardElevation="@dimen/cardview_radius">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_membership"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvMembershipTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/glhOne"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Это текст абонемента" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glhOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/tvMembershipTitle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glvTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="52dp" />
+
+            <ImageView
+                android:id="@+id/ivIconCheckmark_1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/glvTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/glhOne"
+                app:srcCompat="@drawable/ic_checkmark"
+                tools:scr="@drawable/ic_checkmark" />
+
+            <TextView
+                android:id="@+id/tvMembershipItem_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvMembershipItem_2"
+                app:layout_constraintStart_toEndOf="@id/glvTwo"
+                app:layout_constraintTop_toBottomOf="@+id/glhOne"
+                tools:text="Это текст 1" />
+
+            <ImageView
+                android:id="@+id/ivIconCheckmark_2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/glvTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivIconCheckmark_1"
+                app:srcCompat="@drawable/ic_checkmark"
+                tools:scr="@drawable/ic_checkmark" />
+
+            <TextView
+                android:id="@+id/tvMembershipItem_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvMembershipItem_3"
+                app:layout_constraintStart_toEndOf="@id/glvTwo"
+                app:layout_constraintTop_toBottomOf="@+id/tvMembershipItem_1"
+                tools:text="Это текст 2" />
+
+            <ImageView
+                android:id="@+id/ivIconCheckmark_3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/glvTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivIconCheckmark_2"
+                app:srcCompat="@drawable/ic_checkmark"
+                tools:scr="@drawable/ic_checkmark" />
+
+            <TextView
+                android:id="@+id/tvMembershipItem_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvMembershipPrice"
+                app:layout_constraintStart_toEndOf="@id/glvTwo"
+                app:layout_constraintTop_toBottomOf="@+id/tvMembershipItem_2"
+                tools:text="Это текст 3" />
+
+            <TextView
+                android:id="@+id/tvMembershipPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMembershipItem_3"
+                tools:text="1000 р" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

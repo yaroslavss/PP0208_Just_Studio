@@ -9,19 +9,46 @@ class ServicesViewModel : ViewModel() {
 
     private val membershipList = listOf(
         Membership(
-            item_1 = "Абонемент 1",
-            item_2 = "Строка 1",
-            item_3 = "Строка 2"
+            title = "Абонемент 1",
+            item_1 = "Строка 1",
+            item_2 = "Строка 2",
+            item_3 = "Строка 3",
+            price = 1000
         ),
         Membership(
-            item_1 = "Абонемент 2",
-            item_2 = "Строка 1",
-            item_3 = "Строка 2"
+            title = "Абонемент 2",
+            item_1 = "Строка 1",
+            item_2 = "Строка 2",
+            item_3 = "Строка 3",
+            price = 1000
         ),
         Membership(
-            item_1 = "Абонемент 3",
-            item_2 = "Строка 1",
-            item_3 = "Строка 2"
+            title = "Абонемент 3",
+            item_1 = "Строка 1",
+            item_2 = "Строка 2",
+            item_3 = "Строка 3",
+            price = 1000
+        ),
+        Membership(
+            title = "Абонемент 4",
+            item_1 = "Строка 1",
+            item_2 = "Строка 2",
+            item_3 = "Строка 3",
+            price = 1000
+        ),
+        Membership(
+            title = "Абонемент 5",
+            item_1 = "Строка 1",
+            item_2 = "Строка 2",
+            item_3 = "Строка 3",
+            price = 1000
+        ),
+        Membership(
+            title = "Абонемент 6",
+            item_1 = "Строка 1",
+            item_2 = "Строка 2",
+            item_3 = "Строка 3",
+            price = 1000
         )
     )
     private val _membershipListLiveData = MutableLiveData<List<Membership>>()
