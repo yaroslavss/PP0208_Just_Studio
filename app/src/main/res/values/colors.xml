@@ -11,5 +11,6 @@
 
     <!-- Just Studio colors -->
     <color name="main_color">#FF13340A</color>
+    <color name="low_green">#FF71856C</color>
     <color name="background_color">#FFFDF8F0</color>
 </resources>
