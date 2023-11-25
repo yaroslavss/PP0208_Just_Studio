@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/tvFeedbackUserName"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/main_color"
                 android:textSize="16sp"
@@ -31,6 +31,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Сергей Иванов" />
+
+            <ImageView
+                android:id="@+id/ivImgStars"
+                android:layout_width="95dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:layout_constraintEnd_toStartOf="@+id/tvFeedbackRating"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_stars"
+                tools:scr="@drawable/img_stars" />
+
+            <TextView
+                android:id="@+id/tvFeedbackRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="4.6" />
 
             <TextView
                 android:id="@+id/tvFeedbackDate"

@@ -18,13 +18,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_main" />
 
+    <TextView
+        android:id="@+id/tvFeedbackSorting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="Сортировать:     дате    рейтингу"
+        android:textColor="@color/main_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/rvFeedbacks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFeedbacks"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/default_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFeedbackSorting"
         tools:listitem="@layout/item_feedback" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

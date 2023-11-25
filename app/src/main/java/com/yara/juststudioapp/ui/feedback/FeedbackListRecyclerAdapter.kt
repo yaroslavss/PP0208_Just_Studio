@@ -31,6 +31,7 @@ class FeedbackListRecyclerAdapter(var feedbacks: List<Feedback>) :
         holder.itemView.apply {
             binding.tvFeedbackUserName.text = item.name
             binding.tvFeedbackDate.text = item.date
+            binding.tvFeedbackRating.text = item.rating.toString()
             binding.tvFeedbackText.text = item.text
         }
     }

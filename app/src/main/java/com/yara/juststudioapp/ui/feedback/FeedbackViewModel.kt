@@ -11,7 +11,7 @@ class FeedbackViewModel : ViewModel() {
         Feedback(
             name = "Сергей Иванов",
             date = "22.11.2023",
-            rating = 4.5,
+            rating = 5.0,
             text = "Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции позволяет оценить значение!!!"
         ),
         Feedback(
@@ -23,9 +23,21 @@ class FeedbackViewModel : ViewModel() {
         Feedback(
             name = "Сергей Иванов",
             date = "22.11.2023",
+            rating = 4.8,
+            text = "Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции позволяет оценить значение!!!"
+        ),
+        Feedback(
+            name = "Сергей Иванов",
+            date = "22.11.2023",
+            rating = 3.5,
+            text = "Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции позволяет оценить значение!!!"
+        ),
+        Feedback(
+            name = "Сергей Иванов",
+            date = "22.11.2023",
             rating = 4.5,
             text = "Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции позволяет оценить значение!!!"
-        )
+        ),
     )
     private val _feedbackListLiveData = MutableLiveData<List<Feedback>>()
     val feedbackListLiveData: LiveData<List<Feedback>> = _feedbackListLiveData
