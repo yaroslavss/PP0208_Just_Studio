@@ -11,7 +11,8 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimary</item>
-        <!-- Customize your theme here. -->
+        <!-- Navigation drawer -->
+        <item name="navigationViewStyle">@style/Widget.App.NavigationView</item>
     </style>
 
     <style name="Theme.JustStudioApp.NoActionBar">
@@ -38,5 +39,17 @@
         <item name="colorPrimary">@color/main_color</item>
         <item name="colorSurface">@color/main_color</item>
         <item name="colorOnSurfaceVariant">@color/background_color</item>
+    </style>
+
+    <!-- navigation drawer -->
+    <style name="Widget.App.NavigationView" parent="Widget.Material3.NavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.NavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.NavigationView" parent="">
+        <item name="colorSecondaryContainer">@color/grey_green</item>
+        <item name="colorOnSecondaryContainer">@color/main_color</item>
+        <item name="colorSurface">@color/background_color</item>
+        <item name="colorOnSurface">@color/main_color</item>
     </style>
 </resources>

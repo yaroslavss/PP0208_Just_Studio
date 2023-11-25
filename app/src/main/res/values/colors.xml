@@ -9,8 +9,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Just Studio colors -->
+    <!--
+        Just Studio colors
+    -->
+    <!-- dark green -->
     <color name="main_color">#FF13340A</color>
+    <!-- low green -->
     <color name="low_green">#FF71856C</color>
+    <!-- grey green -->
+    <color name="grey_green">#FFC4CCC1</color>
+    <!-- beige -->
     <color name="background_color">#FFFDF8F0</color>
 </resources>
