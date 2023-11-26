@@ -3,6 +3,8 @@ package com.yara.juststudioapp.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.yara.juststudioapp.R
+import com.yara.juststudioapp.model.Banner
 
 class HomeViewModel : ViewModel() {
 
@@ -16,4 +18,16 @@ class HomeViewModel : ViewModel() {
     }
     val text_phone: LiveData<String> = _text_phone
 
+    private val bannerList = listOf(
+        Banner(R.drawable.banner),
+        Banner(R.drawable.banner),
+        Banner(R.drawable.banner),
+        Banner(R.drawable.banner)
+    )
+    private val _bannerListLiveData = MutableLiveData<List<Banner>>()
+    val bannerListLiveData: LiveData<List<Banner>> = _bannerListLiveData
+
+    init {
+        _bannerListLiveData.postValue(bannerList)
+    }
 }
