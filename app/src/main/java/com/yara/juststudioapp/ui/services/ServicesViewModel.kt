@@ -3,7 +3,7 @@ package com.yara.juststudioapp.ui.services
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.yara.juststudioapp.model.Membership
+import com.yara.juststudioapp.domain.model.Membership
 
 class ServicesViewModel : ViewModel() {
 

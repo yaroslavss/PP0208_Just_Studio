@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yara.juststudioapp.databinding.ItemFeedbackBinding
-import com.yara.juststudioapp.model.Feedback
+import com.yara.juststudioapp.domain.model.Feedback
 
 class FeedbackListRecyclerAdapter(var feedbacks: List<Feedback>) :
     RecyclerView.Adapter<FeedbackListRecyclerAdapter.FeedbackViewHolder>() {

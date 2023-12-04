@@ -3,7 +3,7 @@ package com.yara.juststudioapp.ui.feedback
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.yara.juststudioapp.model.Feedback
+import com.yara.juststudioapp.domain.model.Feedback
 
 class FeedbackViewModel : ViewModel() {
 

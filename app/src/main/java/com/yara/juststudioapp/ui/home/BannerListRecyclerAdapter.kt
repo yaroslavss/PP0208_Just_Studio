@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yara.juststudioapp.databinding.ItemBannerBinding
-import com.yara.juststudioapp.model.Banner
+import com.yara.juststudioapp.domain.model.Banner
 
 class BannerListRecyclerAdapter(var banners: List<Banner>) :
     RecyclerView.Adapter<BannerListRecyclerAdapter.BannerViewHolder>() {
