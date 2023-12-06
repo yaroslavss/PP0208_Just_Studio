@@ -32,9 +32,6 @@ class ProfileFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        homeViewModel.token.observe(viewLifecycleOwner) { token ->
-            println("!!! $token")
-        }
         return root
     }
 

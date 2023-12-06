@@ -2,7 +2,7 @@ package com.yara.juststudioapp.di
 
 import android.content.Context
 import com.yara.juststudioapp.di.modules.RemoteModule
-import com.yara.juststudioapp.ui.profile.ProfileViewModel
+import com.yara.juststudioapp.ui.login.LoginViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -20,5 +20,5 @@ interface AppComponent {
         fun create(@BindsInstance context: Context): AppComponent
     }
 
-    fun inject(profileViewModel: ProfileViewModel)
+    fun inject(loginViewModel: LoginViewModel)
 }

@@ -12,4 +12,9 @@
     <!-- cards -->
     <dimen name="cardview_elevation">5dp</dimen>
     <dimen name="cardview_radius">5dp</dimen>
+
+    <!-- Login Fragment -->
+    <dimen name="login_fragment_text_margin_top">40dp</dimen>
+    <dimen name="login_fragment_text_margin_horizontal">60dp</dimen>
+    <dimen name="login_fragment_text_size">18sp</dimen>
 </resources>
