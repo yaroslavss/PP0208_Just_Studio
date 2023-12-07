@@ -20,4 +20,8 @@
     <color name="grey_green">#FFC4CCC1</color>
     <!-- beige -->
     <color name="background_color">#FFFDF8F0</color>
+    <!-- red -->
+    <color name="red">#FFFF0000</color>
+    <!-- label's color -->
+    <color name="label_color">#FF333333</color>
 </resources>
