@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.yara.juststudioapp.R
-import com.yara.juststudioapp.model.Banner
+import com.yara.juststudioapp.domain.model.Banner
 
 class HomeViewModel : ViewModel() {
 

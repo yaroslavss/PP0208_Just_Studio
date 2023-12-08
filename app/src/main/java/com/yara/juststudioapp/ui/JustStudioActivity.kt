@@ -1,4 +1,4 @@
-package com.yara.juststudioapp
+package com.yara.juststudioapp.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.yara.juststudioapp.R
 import com.yara.juststudioapp.databinding.ActivityJustStudioBinding
 
 class JustStudioActivity : AppCompatActivity() {

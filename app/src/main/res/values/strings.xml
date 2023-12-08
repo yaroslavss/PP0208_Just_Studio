@@ -18,4 +18,16 @@
     <string name="menu_notifications">Уведомления</string>
     <!-- bottom navigation -->
     <string name="menu_profile">Профиль</string>
+    <!-- other fragments' labels -->
+    <string name="menu_login">Вход</string>
+
+    <!-- Login Fragment -->
+    <string name="login_fragment_text">Для доступа к профилю Вам необходимо войти в аккаунт</string>
+    <string name="btn_login_label">Войти</string>
+    <string name="email_label">Email</string>
+    <string name="til_email_hint">example@mail.com</string>
+    <string name="password_label">Пароль</string>
+    <string name="register_link">Зарегистрироваться</string>
+    <string name="forget_password_link">Забыли пароль?</string>
+    <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
 </resources>

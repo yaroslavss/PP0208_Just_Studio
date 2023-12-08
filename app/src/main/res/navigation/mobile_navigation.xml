@@ -40,5 +40,10 @@
         android:name="com.yara.juststudioapp.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
-
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.yara.juststudioapp.ui.login.LoginFragment"
+        android:label="@string/menu_login"
+        tools:layout="@layout/fragment_login">
+    </fragment>
 </navigation>

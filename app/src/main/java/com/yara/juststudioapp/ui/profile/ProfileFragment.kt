@@ -1,5 +1,6 @@
 package com.yara.juststudioapp.ui.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.yara.juststudioapp.R
 import com.yara.juststudioapp.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -33,6 +36,28 @@ class ProfileFragment : Fragment() {
             textView.text = it
         }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val navController = findNavController()
+
+        val sharedPreferences =
+            requireActivity().applicationContext.getSharedPreferences(
+                "settings",
+                Context.MODE_PRIVATE
+            )
+
+        val token = sharedPreferences.getString("API_TOKEN", "")
+
+        println("!!! profile: $token")
+
+        token?.let {
+            if (it.isEmpty()) {
+                navController.navigate(R.id.loginFragment)
+            }
+        }
     }
 
     override fun onDestroyView() {

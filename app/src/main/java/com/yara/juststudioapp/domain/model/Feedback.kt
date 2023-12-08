@@ -1,4 +1,4 @@
-package com.yara.juststudioapp.model
+package com.yara.juststudioapp.domain.model
 
 data class Feedback(
     val name: String,

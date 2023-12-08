@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yara.juststudioapp.databinding.ItemMembershipBinding
-import com.yara.juststudioapp.model.Membership
+import com.yara.juststudioapp.domain.model.Membership
 
 class MembershipListRecyclerAdapter(var memberships: List<Membership>) :
     RecyclerView.Adapter<MembershipListRecyclerAdapter.MembershipViewHolder>() {
