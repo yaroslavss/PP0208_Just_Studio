@@ -20,8 +20,8 @@ class LoginViewModel : ViewModel() {
     @Inject
     lateinit var remoteRepositoryImpl: RemoteRepositoryImpl
 
-    private val _token = MutableLiveData<Resource<TokenResponse>>()
-    val token: LiveData<Resource<TokenResponse>> = _token
+    private val _loginResult = MutableLiveData<Resource<TokenResponse>>()
+    val loginResult: LiveData<Resource<TokenResponse>> = _loginResult
 
     init {
         App.instance.dagger.inject(this)
@@ -29,21 +29,21 @@ class LoginViewModel : ViewModel() {
 
     fun signIn(userLogin: UserLogin) {
         viewModelScope.launch(Dispatchers.IO) {
-            val result = try {
+            try {
                 val response = remoteRepositoryImpl.signIn(userLogin)
                 if (response.isSuccessful) {
-                    Resource.Success(response.body()!!)
+                    _loginResult.postValue(Resource.Success(response.body()!!))
+
                 } else {
-                    Resource.Error(response.message())
+                    _loginResult.postValue(Resource.Error(response.message()))
                 }
             } catch (e: HttpException) {
                 // request exception
-                Resource.Error(e.toString())
+                _loginResult.postValue(Resource.Error(e.toString()))
             } catch (e: IOException) {
                 // no internet exception
-                Resource.Error(e.toString())
+                _loginResult.postValue(Resource.Error(e.toString()))
             }
-            _token.postValue(result)
         }
     }
 }

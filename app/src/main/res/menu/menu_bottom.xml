@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_bottomnav_home"
         android:title="@string/menu_home" />
     <item
-        android:id="@+id/loginFragment"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_bottomnav_profile"
         android:title="@string/menu_profile" />
 </menu>

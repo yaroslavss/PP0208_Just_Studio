@@ -8,6 +8,9 @@ sealed class Resource<T>(
     data class Error<T>(
         val message: String?
     ) : Resource<T>(null, message)
+    data class Exception<T>(
+        val message: String?
+    ) : Resource<T>(null, message)
 
     class Loading<T> : Resource<T>()
 }
