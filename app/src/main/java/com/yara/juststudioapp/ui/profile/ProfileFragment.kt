@@ -52,7 +52,7 @@ class ProfileFragment : Fragment() {
 
         token?.let {
             if (it.isEmpty()) {
-                navController.navigate(R.id.loginFragment)
+                navController.navigate(R.id.action_profileFragment_to_loginFragment)
             }
             viewModel.getUserInfo(token)
         }
