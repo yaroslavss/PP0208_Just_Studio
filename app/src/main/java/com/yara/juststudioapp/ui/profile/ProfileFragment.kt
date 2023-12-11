@@ -11,10 +11,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.yara.juststudioapp.R
 import com.yara.juststudioapp.databinding.FragmentProfileBinding
+import com.yara.juststudioapp.util.Constants.HTTP_ERROR_UNAUTHORIZED
+import com.yara.juststudioapp.util.Resource
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
+    private val viewModel by lazy {
+        ViewModelProvider(this).get(ProfileViewModel::class.java)
+    }
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,17 +30,9 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textProfile
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,6 +53,30 @@ class ProfileFragment : Fragment() {
         token?.let {
             if (it.isEmpty()) {
                 navController.navigate(R.id.loginFragment)
+            }
+            viewModel.getUserInfo(token)
+        }
+
+        viewModel.userResult.observe(viewLifecycleOwner) { response ->
+            println("!!! $response")
+            when (response) {
+                is Resource.Success -> {
+                    val tietEmail = binding.tietEmail as TextView
+                    tietEmail.text = response.data.emailUser
+                    val tietUserName = binding.tietUserName as TextView
+                    tietUserName.text = response.data.userName
+                }
+
+                is Resource.Error -> {
+                    response.message?.let { message ->
+                        if (message == HTTP_ERROR_UNAUTHORIZED) {
+                            navController.navigate(R.id.loginFragment)
+                        }
+                    }
+                }
+
+                is Resource.Exception -> {}
+                is Resource.Loading -> {}
             }
         }
     }

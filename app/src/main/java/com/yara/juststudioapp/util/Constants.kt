@@ -6,6 +6,7 @@ object Constants {
     const val REMOTE_API_BASE_URL = "http://10.0.2.2:8585"
 
     const val HTTP_ERROR_NOT_FOUND = "Not Found"
+    const val HTTP_ERROR_UNAUTHORIZED = "Unauthorized"
 
     const val MSG_LOGIN_ERROR_HTTP_ERROR_NOT_FOUND = "Неправильный логин или пароль"
     const val MSG_LOGIN_ERROR_EMPTY_CREDENTIALS = "Введите email и пароль"

@@ -30,4 +30,7 @@
     <string name="register_link">Зарегистрироваться</string>
     <string name="forget_password_link">Забыли пароль?</string>
     <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
+
+    <!-- Profile Fragment -->
+    <string name="username_label">ФИО</string>
 </resources>
