@@ -9,20 +9,39 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.core.animation.doOnEnd
 import androidx.core.content.ContextCompat
+import androidx.viewpager2.widget.ViewPager2
 import com.yara.juststudioapp.R
 import com.yara.juststudioapp.databinding.LayoutTabBarBinding
 
 class CustomTabBar(context: Context?, attrs: AttributeSet?) :
     RelativeLayout(context, attrs) {
+
     private var binding: LayoutTabBarBinding
     private lateinit var listTabName: List<String>
     private lateinit var listTabTv: List<TextView>
+    private var isAnimating = false
+    private var onTabSelectedListener: ((Int) -> Unit)? = null
 
     init {
         binding = LayoutTabBarBinding.inflate(LayoutInflater.from(context), this, true)
         setupAttrs(attrs)
         setupUI()
+    }
+
+    fun attachTo(viewPager: ViewPager2) {
+        onTabSelectedListener = {
+            viewPager.setCurrentItem(it, true)
+        }
+
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                if (!isAnimating) {
+                    onTabSelected(position)
+                }
+            }
+        })
     }
 
     private fun setupAttrs(attrs: AttributeSet?) {
@@ -83,7 +102,12 @@ class CustomTabBar(context: Context?, attrs: AttributeSet?) :
             listTabTv[index].x
         ).apply {
             duration = 0
+            onTabSelectedListener?.invoke(index)
+            isAnimating = true
             start()
+            doOnEnd {
+                isAnimating = false
+            }
         }
     }
 }

@@ -38,6 +38,14 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // setup ViewPager2 adapter and custom tab bar
+        val vpAdapter = VPAdapter(this)
+        val viewPager = binding.vpViewPager
+        viewPager.adapter = vpAdapter
+
+        val tabBar = binding.ctbTabBar
+        tabBar.attachTo(viewPager)
+
         val navController = findNavController()
 
         val sharedPreferences =
@@ -61,10 +69,10 @@ class ProfileFragment : Fragment() {
             println("!!! $response")
             when (response) {
                 is Resource.Success -> {
-                    val tietEmail = binding.tietEmail as TextView
+                    /*val tietEmail = binding.tietEmail as TextView
                     tietEmail.text = response.data.emailUser
                     val tietUserName = binding.tietUserName as TextView
-                    tietUserName.text = response.data.userName
+                    tietUserName.text = response.data.userName*/
                 }
 
                 is Resource.Error -> {
