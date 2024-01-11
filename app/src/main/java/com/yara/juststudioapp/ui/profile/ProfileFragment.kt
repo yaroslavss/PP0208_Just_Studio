@@ -50,12 +50,12 @@ class ProfileFragment : Fragment() {
 
         println("!!! profile: $token")
 
-        token?.let {
+        /*token?.let {
             if (it.isEmpty()) {
                 navController.navigate(R.id.action_profileFragment_to_loginFragment)
             }
             viewModel.getUserInfo(token)
-        }
+        }*/
 
         viewModel.userResult.observe(viewLifecycleOwner) { response ->
             println("!!! $response")
@@ -68,11 +68,11 @@ class ProfileFragment : Fragment() {
                 }
 
                 is Resource.Error -> {
-                    response.message?.let { message ->
+                    /*response.message?.let { message ->
                         if (message == HTTP_ERROR_UNAUTHORIZED) {
                             navController.navigate(R.id.loginFragment)
                         }
-                    }
+                    }*/
                 }
 
                 is Resource.Exception -> {}

@@ -14,6 +14,8 @@
     -->
     <!-- dark green -->
     <color name="main_color">#FF13340A</color>
+    <!-- green -->
+    <color name="green">#FF3AA31E</color>
     <!-- low green -->
     <color name="low_green">#FF71856C</color>
     <!-- grey green -->

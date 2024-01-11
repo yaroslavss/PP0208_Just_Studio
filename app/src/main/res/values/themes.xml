@@ -52,4 +52,9 @@
         <item name="colorSurface">@color/background_color</item>
         <item name="colorOnSurface">@color/main_color</item>
     </style>
+
+    <!-- custom button -->
+    <style name="Theme.JustStudioApp.ProfileTabButton" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/green</item>
+    </style>
 </resources>
