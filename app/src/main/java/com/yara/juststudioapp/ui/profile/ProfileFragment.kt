@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.yara.juststudioapp.R
 import com.yara.juststudioapp.databinding.FragmentProfileBinding
-import com.yara.juststudioapp.util.Constants.HTTP_ERROR_UNAUTHORIZED
 import com.yara.juststudioapp.util.Resource
 
 class ProfileFragment : Fragment() {
@@ -20,6 +22,33 @@ class ProfileFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this).get(ProfileViewModel::class.java)
     }
+    private lateinit var adapter: VPAdapter
+    private lateinit var viewPager: ViewPager2
+    private lateinit var tabLayout: TabLayout
+    private val tabNames: Array<String> = arrayOf(
+        "Основные настройки",
+        "Абонементы",
+        "Уведомления",
+        "Записи",
+        "Смена пароля",
+        "Написать отзыв",
+    )
+    private val tabIcons: Array<Int> = arrayOf(
+        R.drawable.ic_tab_profile_settings,
+        R.drawable.ic_tab_profile_memberships,
+        R.drawable.ic_tab_profile_notifications,
+        R.drawable.ic_tab_profile_records,
+        R.drawable.ic_tab_profile_changepassword,
+        R.drawable.ic_tab_profile_feedback
+    )
+    private val tabIconsSelected: Array<Int> = arrayOf(
+        R.drawable.ic_tab_profile_settings_sel,
+        R.drawable.ic_tab_profile_memberships_sel,
+        R.drawable.ic_tab_profile_notifications_sel,
+        R.drawable.ic_tab_profile_records_sel,
+        R.drawable.ic_tab_profile_changepassword_sel,
+        R.drawable.ic_tab_profile_feedback_sel
+    )
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -38,13 +67,13 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // setup ViewPager2 adapter and custom tab bar
-        val vpAdapter = VPAdapter(this)
-        val viewPager = binding.vpViewPager
-        viewPager.adapter = vpAdapter
+        // setup ViewPager2 adapter
+        adapter = VPAdapter(this)
+        viewPager = binding.vpViewPager
+        viewPager.adapter = adapter
 
-        val tabBar = binding.ctbTabBar
-        tabBar.attachTo(viewPager)
+        // setup tab layout
+        initTabs()
 
         val navController = findNavController()
 
@@ -92,5 +121,37 @@ class ProfileFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun initTabs() {
+        tabLayout = binding.tlTabLayout
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = tabNames[position]
+            val imgView = ImageView(context);
+            imgView.setImageResource(tabIcons[position]);
+            tab.customView = imgView;
+        }.attach()
+
+        // change selected tab's icon
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                viewPager.currentItem = tab.position
+                val imgViewSel = ImageView(context);
+                imgViewSel.setImageResource(tabIconsSelected[tab.position]);
+                tab.customView = imgViewSel;
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                val imgView = ImageView(context);
+                imgView.setImageResource(tabIcons[tab.position]);
+                tab.customView = imgView;
+            }
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+
+        // setup first tab as selected
+        val imgViewSel = ImageView(context);
+        imgViewSel.setImageResource(tabIconsSelected[0]);
+        tabLayout.getTabAt(0)?.customView = imgViewSel
     }
 }
