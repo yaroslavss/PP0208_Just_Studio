@@ -11,7 +11,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
         android:layout_marginBottom="@dimen/default_margin_quarter"
         android:text="@string/username_label"
         android:textColor="@color/label_color"
@@ -25,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin_quarter"
         android:elevation="5dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,6 +33,110 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:enabled="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvGenderLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:text="@string/gender_label"
+        android:textColor="@color/label_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/rgGender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilUserName" />
+
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:checkedButton="@+id/rbMale"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/tvPhoneNumLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGenderLabel">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/gender_male_label" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/gender_female_label" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvPhoneNumLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin_quarter"
+        android:text="@string/phonenum_label"
+        android:textColor="@color/label_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tilPhoneNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilUserName" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPhoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin_quarter"
+        android:elevation="5dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietPhoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:enabled="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvDateOfBirthLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin_quarter"
+        android:text="@string/dateofbirth_label"
+        android:textColor="@color/label_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tilDateOfBirth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPhoneNum" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDateOfBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin_quarter"
+        android:elevation="5dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDateOfBirthLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietDateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/default_margin"
@@ -52,14 +155,14 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tilEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilUserName" />
+        app:layout_constraintTop_toBottomOf="@id/tilDateOfBirth" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin_quarter"
         android:elevation="5dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
