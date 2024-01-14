@@ -136,7 +136,6 @@ class ProfileFragment : Fragment() {
         // change selected tab's icon
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager.currentItem = tab.position
                 val imgViewSel = ImageView(context);
                 imgViewSel.setImageResource(tabIconsSelected[tab.position]);
                 tab.customView = imgViewSel;
