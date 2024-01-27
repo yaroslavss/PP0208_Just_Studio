@@ -30,4 +30,12 @@
     <string name="register_link">Зарегистрироваться</string>
     <string name="forget_password_link">Забыли пароль?</string>
     <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
+
+    <!-- Profile Fragment -->
+    <string name="username_label">ФИО</string>
+    <string name="phonenum_label">Номер телефона</string>
+    <string name="dateofbirth_label">Дата рождения</string>
+    <string name="gender_label">Пол</string>
+    <string name="gender_male_label">М</string>
+    <string name="gender_female_label">Ж</string>
 </resources>
