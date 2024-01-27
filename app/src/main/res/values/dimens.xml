@@ -19,4 +19,7 @@
     <dimen name="login_fragment_text_margin_horizontal">60dp</dimen>
     <dimen name="login_fragment_text_size">18sp</dimen>
     <dimen name="btn_login_margin_top">56dp</dimen>
+
+    <!-- Register Fragment -->
+    <dimen name="register_fragment_text_margin_top">60dp</dimen>
 </resources>

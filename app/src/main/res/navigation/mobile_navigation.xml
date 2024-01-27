@@ -52,4 +52,9 @@
         android:label="@string/menu_login"
         tools:layout="@layout/fragment_login">
     </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.yara.juststudioapp.ui.register.RegisterFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

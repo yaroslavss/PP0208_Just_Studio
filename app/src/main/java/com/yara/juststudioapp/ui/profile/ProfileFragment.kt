@@ -87,12 +87,12 @@ class ProfileFragment : Fragment() {
 
         println("!!! profile: $token")
 
-        /*token?.let {
+        token?.let {
             if (it.isEmpty()) {
                 navController.navigate(R.id.action_profileFragment_to_loginFragment)
             }
             viewModel.getUserInfo(token)
-        }*/
+        }
 
         viewModel.userResult.observe(viewLifecycleOwner) { response ->
             println("!!! $response")

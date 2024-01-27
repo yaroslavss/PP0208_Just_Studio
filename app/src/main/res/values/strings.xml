@@ -20,6 +20,7 @@
     <string name="menu_profile">Профиль</string>
     <!-- other fragments' labels -->
     <string name="menu_login">Вход</string>
+    <string name="menu_register">Регистрация</string>
 
     <!-- Login Fragment -->
     <string name="login_fragment_text">Для доступа к профилю Вам необходимо войти в аккаунт</string>
@@ -30,6 +31,10 @@
     <string name="register_link">Зарегистрироваться</string>
     <string name="forget_password_link">Забыли пароль?</string>
     <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
+
+    <!-- Register Fragment -->
+    <string name="password_repeat_label">Повторите пароль</string>
+    <string name="btn_register_label">Зарегистрироваться</string>
 
     <!-- Profile Fragment -->
     <string name="username_label">ФИО</string>

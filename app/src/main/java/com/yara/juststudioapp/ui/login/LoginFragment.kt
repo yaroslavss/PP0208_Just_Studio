@@ -62,6 +62,11 @@ class LoginFragment : Fragment() {
             viewModel.signIn(UserLogin(login, password))
         }
 
+        // go to register fragment
+        binding.tvRegisterLink.setOnClickListener {
+            navController.navigate(R.id.registerFragment)
+        }
+
         // handle auth result
         viewModel.loginResult.observe(viewLifecycleOwner) { response ->
             println("!!! $response")
