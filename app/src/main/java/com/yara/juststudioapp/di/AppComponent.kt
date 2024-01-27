@@ -4,6 +4,7 @@ import android.content.Context
 import com.yara.juststudioapp.di.modules.RemoteModule
 import com.yara.juststudioapp.ui.login.LoginViewModel
 import com.yara.juststudioapp.ui.profile.ProfileViewModel
+import com.yara.juststudioapp.ui.register.RegisterViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -23,4 +24,5 @@ interface AppComponent {
 
     fun inject(loginViewModel: LoginViewModel)
     fun inject(profileViewModel: ProfileViewModel)
+    fun inject(registerViewModel: RegisterViewModel)
 }
