@@ -1,4 +1,4 @@
-package com.yara.juststudioapp.ui.register
+package com.yara.juststudioapp.ui.confirm
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,17 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.yara.juststudioapp.R
-import com.yara.juststudioapp.databinding.FragmentRegisterBinding
+import com.yara.juststudioapp.databinding.FragmentConfirmBinding
 import com.yara.juststudioapp.domain.model.UserLogin
-import com.yara.juststudioapp.util.Resource
 
-class RegisterFragment : Fragment() {
+class ConfirmFragment : Fragment() {
 
-    private var _binding: FragmentRegisterBinding? = null
+    private var _binding: FragmentConfirmBinding? = null
     private val viewModel by lazy {
-        ViewModelProvider(this).get(RegisterViewModel::class.java)
+        ViewModelProvider(this).get(ConfirmViewModel::class.java)
     }
 
     // This property is only valid between onCreateView and
@@ -29,17 +26,15 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        _binding = FragmentConfirmBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navController = findNavController()
-
         // send register request
-        binding.btnRegister.setOnClickListener {
+        /*binding.btnRegister.setOnClickListener {
             val login = binding.tietEmail.text.toString()
             val password = binding.tietPassword.text.toString()
 
@@ -49,22 +44,7 @@ class RegisterFragment : Fragment() {
         // handle register result
         viewModel.registerResult.observe(viewLifecycleOwner) { response ->
             println("!!! $response")
-            when (response) {
-                is Resource.Success -> {
-                    navController.popBackStack()
-                    navController.navigate(R.id.confirmFragment)
-                }
-
-                is Resource.Error -> {
-                }
-
-                is Resource.Exception -> {
-                }
-
-                is Resource.Loading -> {
-                }
-            }
-        }
+        }*/
     }
 
     override fun onDestroyView() {

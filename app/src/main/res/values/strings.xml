@@ -36,6 +36,10 @@
     <string name="password_repeat_label">Повторите пароль</string>
     <string name="btn_register_label">Зарегистрироваться</string>
 
+    <!-- Confirm Fragment -->
+    <string name="code_label">Код</string>
+    <string name="btn_confirm_label">Подтвердить</string>
+
     <!-- Profile Fragment -->
     <string name="username_label">ФИО</string>
     <string name="phonenum_label">Номер телефона</string>

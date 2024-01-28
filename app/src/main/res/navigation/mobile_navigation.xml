@@ -57,4 +57,9 @@
         android:name="com.yara.juststudioapp.ui.register.RegisterFragment"
         android:label="@string/menu_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.yara.juststudioapp.ui.confirm.ConfirmFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_confirm" />
 </navigation>
