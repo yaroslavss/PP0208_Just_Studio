@@ -37,11 +37,13 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val navController = findNavController()
+        var login = ""
+        var password = ""
 
         // send register request
         binding.btnRegister.setOnClickListener {
-            val login = binding.tietEmail.text.toString()
-            val password = binding.tietPassword.text.toString()
+            login = binding.tietEmail.text.toString()
+            password = binding.tietPassword.text.toString()
 
             viewModel.register(UserLogin(login, password))
         }
@@ -51,8 +53,10 @@ class RegisterFragment : Fragment() {
             println("!!! $response")
             when (response) {
                 is Resource.Success -> {
+                    val bundle = Bundle();
+                    bundle.putParcelable("user_login", UserLogin(login, password));
                     navController.popBackStack()
-                    navController.navigate(R.id.confirmFragment)
+                    navController.navigate(R.id.confirmFragment, bundle)
                 }
 
                 is Resource.Error -> {

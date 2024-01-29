@@ -4,6 +4,7 @@ import com.yara.juststudioapp.data.model.RegisterResponse
 import com.yara.juststudioapp.data.model.TokenResponse
 import com.yara.juststudioapp.data.model.UserResponse
 import com.yara.juststudioapp.domain.model.UserLogin
+import com.yara.juststudioapp.domain.model.UserLoginWithCode
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -27,5 +28,11 @@ interface RemoteService {
     @POST("/registration")
     suspend fun register(
         @Body userLogin: UserLogin,
+    ): Response<RegisterResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("/confirmation")
+    suspend fun confirm(
+        @Body userLoginWithCode: UserLoginWithCode,
     ): Response<RegisterResponse>
 }

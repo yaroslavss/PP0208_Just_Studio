@@ -5,6 +5,7 @@ import com.yara.juststudioapp.data.model.RegisterResponse
 import com.yara.juststudioapp.data.model.TokenResponse
 import com.yara.juststudioapp.data.model.UserResponse
 import com.yara.juststudioapp.domain.model.UserLogin
+import com.yara.juststudioapp.domain.model.UserLoginWithCode
 import com.yara.juststudioapp.domain.repository.RemoteRepository
 import retrofit2.Response
 import javax.inject.Inject
@@ -22,5 +23,9 @@ class RemoteRepositoryImpl @Inject constructor(private val remoteService: Remote
 
     override suspend fun register(userLogin: UserLogin): Response<RegisterResponse> {
         return remoteService.register(userLogin)
+    }
+
+    override suspend fun confirm(userLoginWithCode: UserLoginWithCode): Response<RegisterResponse> {
+        return remoteService.confirm(userLoginWithCode)
     }
 }
